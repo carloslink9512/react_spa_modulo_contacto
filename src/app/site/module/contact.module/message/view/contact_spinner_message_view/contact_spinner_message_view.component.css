@@ -1,0 +1,25 @@
+@import "../../../../shared.module/external/Open_Sans/font_open_sans.css";
+@import "../../../../shared.module/external/roboto/fuente_Roboto.css";
+
+
+.contact_spinner_message_view-base{
+    text-align: center;
+}
+
+/*...responsive...*/
+
+@media (min-width: 450px){
+
+}
+
+@media (min-width: 600px){
+
+}
+
+@media (min-width: 750px){
+
+}
+
+@media (min-width: 990px){
+
+}

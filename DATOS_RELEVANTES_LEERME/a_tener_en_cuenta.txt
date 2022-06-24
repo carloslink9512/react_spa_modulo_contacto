@@ -1,0 +1,63 @@
+
+//...DETALLES INICIALES
+
+1. Corresponde a un manejador y tres módulos aislados, de una aplicación simple tipo website.
+2. Construido en React puro (SPA), para consumo de API REST en Express sobre NODE.JS y Mongoose sobre MongoDB.
+3. La carpeta "manager" contiene todo lo relativo al manejador.
+4. La carpeta "site" contiene los módulos que forman parte de la estructura del desarrollo. Para este ejemplo solo hay tres.
+    Módulo contact (típico formulario de contacto y archivos anexos)
+    Módulo shared (comparte sus componentes con todos los módulos)
+    Módulo notfound (componentes que son renderizados cuando las url's son desconocidas)
+
+AppManger (en app.manager.js) es el componente raíz, padre de todos los demás componentes.
+
+
+//...CLASIFICACIÓN DE LOS COMPONENTES PARA ESTRUCTURACIÓN E IDENTIFICACIÓN
+
+1. Los componentes están clasificados en tres tipos:
+    1.a. Componentes "screen" o pantalla.
+    1.b. Componentes "view" o vistas.
+    1.c. Componentes "active" o activos.
+
+2. Tipo "active": son los componentes que tienen "vida propia", encargados de contener el código de javascript necesario para:
+    comunicarse con un servidor mediante "api-rest".
+    procesar la información retornada por el servidor.
+    comunicarse con Apis externas.
+    no suelen contener (o llamar) a otros componentes.
+    solo entran en funcionamiento si son renderizados por un componente "view".
+
+3. Tipo "view": son los componentes destinados a la interfaz gráfica en sí, a la maquetación propiamente dicha.
+    su estructura básica está compuesta por etiquetas y estilos.
+    son los encargados de renderizar uno o más componentes "active".
+    los componentes view pueden renderizar a otros "view".
+    no generan ningún tipo de funcionalidad. No tienen "vida".
+
+4. Tipo "screen": son componentes que representan a una pantalla o interfaz gráfica.
+    no contienen etiquetas ni estilos.
+    no contienen funcionalidades.
+    solo contienen uno o más componentes "view".
+    es un contenedor de componentes "view".
+    no contienen componentes "active".
+
+
+//...MISCELANEAS...
+
+1. Token: no es necesario.
+2. Cookies: no es necesario.
+3. Tiempo real: no es necesario.
+4. LocalStorage: solamente para guardar los dos primeros caracteres del código de idioma de configuración del explorador del cliente. ('es', 'en', etc).
+   El idioma elegido por defecto es 'en'.
+5. Cada componente tiene su propio traductor (translator). Esto permite controlar en qué idiomas traducir.
+6. Sistema propio de codificación de errores: sí. El servidor API REST nos envía códigos de respuesta, e información según el caso.
+7. Mapa de componentes: sí, anexo en una planilla de cálculos.
+
+//...
+
+1. Si hacemos una descarga de React y reemplazamos la carpeta "src" original y su contenido por este desarrollo, funcionará.
+2. Agregar las siguientes librerías. Tener en cuenta las versiones.
+    2.a. bootstrap
+    2.b. react-bootstrap
+    2.c. react-bootstrap-icons
+    2.d. react-router-dom
+3. Ejemplo desarrollado para mi curriculum en linkedin.
+4. Para más información comunicarse por mensaje en linkedin.
